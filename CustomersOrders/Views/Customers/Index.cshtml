@@ -1,0 +1,14 @@
+﻿@model CustomersOrders.Models.Customers
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>客戶訂單</h2>
+
+<div class="form-group row">
+    <label class="col-sm-1 control-label">客戶：</label>
+    @Html.DropDownList("Customers", null ,"--請選擇--",new { @class="col-sm-11 form-control"})
+</div>
+
+<div id="Orders"></div>
+
