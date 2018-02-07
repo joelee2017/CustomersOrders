@@ -16,5 +16,12 @@ namespace CustomersOrders.Controllers
             ViewBag.Customers = new SelectList(dc.Customers, "CustomerID", "CompanyName");
             return View();
         }
+
+        public ActionResult Orders(string id)
+        {
+            NorthwindEntities dc = new NorthwindEntities();
+            Customers c = dc.Customers.Find(id);
+            return PartialView("_OrdersPartial", c.Orders);
+        }
     }
 }
