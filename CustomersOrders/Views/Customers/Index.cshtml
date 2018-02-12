@@ -15,18 +15,7 @@
 @section scripts
 {
     <script>
-        $("#Customers").bind("change", function () {
-            UpdateOrder();
-        });
-        function UpdateOrder() {
-            $.ajax({
-                type: "GET",
-                url:"/Customers/Orders/"+ Customers.value,
-            }).done(function (result) {
-                $("#Orders").html(result);
-            }).fail(function (err) {
-                alert(err.responseText);
-            });
-        }
+       var webroot ="@Url.Action("Orders", "Customers")";
     </script>
-    }
+    @Scripts.Render("~/bundles/site")
+}
